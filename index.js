@@ -17,7 +17,13 @@ var difference = (currentTime - previousTime) / 86400000;
 
 console.log(difference);
 
-var index = Math.floor(difference) % list.length;
+var index = Math.floor(difference) % (list.length / 2);
 var value = Number(list.charAt(index * 2) + list.charAt(index * 2 + 1)) - 10
-text.innerText = "20" + (14 + (Math.floor(value / 3))) + " #" + ((value % 3) + 1)
-iframe.src = "AP_Mech_FRQs_2014-2018_ (2).pdf#zoom=150&page=" + pageStartingValues[value]
+text.innerText = "AP Physics C: Mechanics " + 
+                 "20" + (14 + (Math.floor(value / 3))) + 
+                 " #" + ((value % 3) + 1)
+iframe.src =
+  "pdfjs/web/viewer.html?file=" +
+  encodeURIComponent("../../AP_Mech_FRQs_2014-2018_ (2).pdf") +
+  "#page=" + pageStartingValues[value] +
+  "&zoom=100";

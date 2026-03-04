@@ -1,42 +1,99 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>FRQ of the Day</title>
-        <style>
+<head>
+    <title>FRQ of the Day</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 60px;
+            font-weight: 800;
+            color: #f1f16b;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 70vh;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            transition: transform 0.2s ease;
+        }
+
+        iframe:hover {
+            transform: scale(1.01);
+        }
+
+        .footer {
+            margin-top: 25px;
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
             h1 {
-                font-size: 100px;
-                margin-top: 1%;
-                margin-bottom: .05%;
-                color:rgb(241, 241, 107);
-                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-            }
-            h2 {
-                font-size: 50px;
-                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+                font-size: 36px;
             }
             h3 {
-                font-size: 65px;
-                margin-top: .05%;
-                margin-bottom: .1%;
-                color:rgb(241, 241, 107);
-                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+                font-size: 20px;
             }
-            body {
-                background-color:rgb(26, 37, 37)
+            iframe {
+                height: 60vh;
             }
-            button {
-                width: 400px;
-            }
-        </style>
-    </head>
-    <body>
-        <center>
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
         <h1>FRQ of the Day</h1>
-        <br>
-        <h3 id="questionName">Question name</h3>
-        <iframe src="AP_Mech_FRQs_2014-2018_ (2).pdf#page=10" width="70%" height="70%" style="border:none;" title="Embedded PDF Viewer" id="pdfHolder">
-         <p>Your browser does not support PDFs. <a href="AP_Mech_FRQs_2014-2018_ (2).pdf">Download the PDF</a>.</p>
-        </iframe>
-    </center>
+        <h3 id="questionName">Loading...</h3>
+
+        <iframe id="pdfHolder"></iframe>
+
+        <div class="footer">
+            Practice consistently. Master mechanics.
+        </div>
+    </div>
+
     <script src="index.js"></script>
-    </body>
+</body>
 </html>
